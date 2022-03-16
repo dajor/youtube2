@@ -1,9 +1,6 @@
-from flask import Flask
-from flask import render_template
+# -*- encoding: utf-8 -*-
+"""
+Copyright (c) 2019 - present AppSeed.us
+"""
 
-app = Flask(__name__)
-
-
-@app.route("/")
-def hello_world():
-    return render_template("index.html")
+from app import app, db
