@@ -129,14 +129,10 @@ def index():
             
    
         file = YouTube(youtube_link).streams.filter(progressive=True, file_extension='mp4').first().download()
+
         @after_this_request
         def remove_file(response):
-            try:
-                os.remove(file)
-                file.close()
-            except Exception as error:
-                print ('error')
-                #app.logger.error("Error removing or closing downloaded file handle", error)
+            os.remove(file)    
             return response
         return send_file(file,as_attachment=True)
     
