@@ -20,5 +20,5 @@ class RegisterForm(FlaskForm):
 
 
 class Youtube(FlaskForm):
-	youtube_link    = StringField  (u'Youtube'      )
+	youtube_link    = StringField  (u'Youtube',validators=[DataRequired()])
 	

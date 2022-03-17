@@ -7,15 +7,16 @@ Copyright (c) 2019 - present AppSeed.us
 import os, logging 
 
 # Flask modules
-from flask               import render_template, request, url_for, redirect, send_from_directory
+from flask               import render_template, request, url_for, redirect, send_from_directory,send_file, after_this_request
 from flask_login         import login_user, logout_user, current_user, login_required
 from werkzeug.exceptions import HTTPException, NotFound, abort
 from jinja2              import TemplateNotFound
-
+import re
+from pytube import YouTube
 # App modules
 from app        import app, lm, db, bc
 from app.models import Users
-from app.forms  import LoginForm, RegisterForm
+from app.forms  import LoginForm, RegisterForm, Youtube
 
 # provide login manager with load_user callback
 @lm.user_loader
@@ -107,27 +108,65 @@ def login():
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
 
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = Youtube(request.form)
+    msg = None
+    if request.method == 'GET': 
+
+        return render_template( 'home/index.html', form=form)
+
+    if form.validate_on_submit():
+        # assign form data to variables
+        youtube_link = request.form.get('youtube_link', '', type=str)
+        print (youtube_link)
+        x = re.search(r"^((http|https)\:\/\/)?(www\.youtube\.com|youtu\.?be)\/((watch\?v=)?([a-zA-Z0-9]{11}))(&.*)*$", youtube_link)
+        print (x)
+        if x == None:
+            msg = "URL error - please use only a Youtube Link"
+
+            
+   
+        file = YouTube(youtube_link).streams.filter(progressive=True, file_extension='mp4').first().download()
+        @after_this_request
+        def remove_file(response):
+            try:
+                os.remove(file)
+                file.close()
+            except Exception as error:
+                print ('error')
+                #app.logger.error("Error removing or closing downloaded file handle", error)
+            return response
+        return send_file(file,as_attachment=True)
+    
+    return render_template( 'home/index.html', form=form,msg=msg)
+    
 # App main route + generic routing
-@app.route('/', defaults={'path': 'index.html'})
-@app.route('/<path>')
-def index(path):
 
-    #if not current_user.is_authenticated:
-    #    return redirect(url_for('login'))
-
-    try:
-
-        if not path.endswith( '.html' ):
-            path += '.html'
-
-        # Serve the file (if exists) from app/templates/FILE.html
-        return render_template( 'home/' + path )
+# @app.route('/<path>')
+# def rest(path):
     
-    except TemplateNotFound:
-        return render_template('home/page-404.html'), 404
+
     
-    except:
-        return render_template('home/page-500.html'), 500
+#     #if not current_user.is_authenticated:
+#     #    return redirect(url_for('login'))
+    
+    
+
+#     try:
+
+#         if not path.endswith( '.html' ):
+#             path += '.html'
+
+#         # Serve the file (if exists) from app/templates/FILE.html
+#         return render_template( 'home/' + path )
+    
+#     except TemplateNotFound:
+#         return render_template('home/page-404.html'), 404
+    
+#     except:
+#         return render_template('home/page-500.html'), 500
 
 # Return sitemap
 @app.route('/sitemap.xml')
