@@ -1,19 +1,4 @@
-<!--
 
-=========================================================
-* Pixel Free Bootstrap 5 UI Kit
-=========================================================
-
-* Product Page: https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit
-* Copyright 2021 Themesberg (https://www.themesberg.com)
-
-* Coded by https://themesberg.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
-
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +105,8 @@
                 </svg></figure>
         </section>
         <!-- Section -->
-        <form method="post" action="" class="mt-4">
+        <!-- Form -->
+        <form method="POST" action="" class="mt-4">
         <div class="section section-md pt-4">
             <div class="container">
                 <div class="text-center text-md-center mb-4 mt-md-0">
@@ -133,13 +119,17 @@
                             {{ msg | safe }}
                         {% else %}
                             Add your Youtube link
-                        {% endif %}                                  
+                        {% endif %}   
+                        {% if form.errors %}
+                            {{ form.errors }}
+                        {% endif %}                               
                     </span>
                 </div>
+                
                 <div class="row mb-4 mb-lg-5">
                     <div class="col-lg-4 col-sm-6">
                         
-                        <!-- Form -->
+                        
                         {{ form.hidden_tag() }}
                         <div class="mb-4">
                             <label for="YoutubeLink">Youtube Link</label>
@@ -150,23 +140,48 @@
              
                             
                         </div>
-                        <!-- End of Form -->
+                        
                         
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Form -->
-                        <!-- <div class="mb-4">
-                            <label for="exampleInputEmail6">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail6">
-                            <small id="emailHelp" class="form-text text-gray">We'll never share your email with anyone
-                                else.</small>
-                        </div> -->
-                        <!-- End of Form -->
-                        
-                    </div>
-                    <div class="col-lg-8 col-sm-12">
-                        <button type="submit" name="login" class="btn btn-primary">Send me Video</button>
-                    </div>
+                    {% if youtube_image %}
+                    <br>
+                        <img src="{{ youtube_image }}">
+                        <br><br>
+                        <div class="row mb-5 mb-lg-5">
+                            
+                            <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
+                                <!-- Radio -->
+                                <fieldset>
+                                    <br>
+                                    <legend class="h6">Quality</legend>
+                                    {% for quality in qualitys %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="youtube_type" id="youtube_type"
+                                            value="{{ quality.resolution }}" checked>
+                                        <label class="form-check-label" for="{{ quality.itag }}">
+                                            {{ quality.resolution }}
+                                        </label>
+                                    </div>
+                                    {% endfor %}
+                                    
+                                    
+                                    <!-- End of Radio -->
+                                </fieldset>
+                            </div>
+                            
+                        </div>
+                    {% endif %}   
+                    {% if youtube_image %}
+                        <div class="mb-4">
+                            <button type="submit" name="login" class="btn btn-primary">Send me Video</button>
+                        </div>
+                    {% else %}
+                        <div class="mb-4">
+                            <button type="submit" name="login" class="btn btn-primary">Check Video</button>
+                        </div>
+                    {% endif %}   
+                    
+                    
                 </div>
                 
                 
@@ -176,6 +191,7 @@
             </div>
         </div>
         </form>
+        <!-- End of Form -->
         <!-- End of Section -->
 
     </main>

@@ -113,6 +113,8 @@ def login():
 def index():
     form = Youtube(request.form)
     msg = None
+    youtube_type = None
+    qualitys = None
     if request.method == 'GET': 
 
         return render_template( 'home/index.html', form=form)
@@ -120,21 +122,48 @@ def index():
     if form.validate_on_submit():
         # assign form data to variables
         youtube_link = request.form.get('youtube_link', '', type=str)
+        youtube_type = request.form.get('youtube_type', '', type=str)
+
         print (youtube_link)
         x = re.search(r"^((http|https)\:\/\/)?(www\.youtube\.com|youtu\.?be)\/((watch\?v=)?([a-zA-Z0-9]{11}))(&.*)*$", youtube_link)
         print (x)
         if x == None:
             msg = "URL error - please use only a Youtube Link"
 
+        if len(youtube_type) ==0:
+            image = YouTube(youtube_link).thumbnail_url
+            types = YouTube(youtube_link).streams.desc()
+            i = 0
+            type = 0
+            final_list = []
             
-   
-        file = YouTube(youtube_link).streams.filter(progressive=True, file_extension='mp4').first().download()
+            streams = types.fmt_streams
+            for type in streams:
+                if type.mime_type == 'video/mp4':
+                    resolution = type.resolution
+                    test = 0
+                    for check in final_list:
+                        if resolution == check.resolution:
+                            test = 1
+                        
+                        
+                            
+                    if test == 0:
+                        final_list.append(type)
 
-        @after_this_request
-        def remove_file(response):
-            os.remove(file)    
-            return response
-        return send_file(file,as_attachment=True)
+
+
+            return render_template( 'home/index.html', form=form,msg=msg,youtube_image=image,qualitys=final_list)
+        else:
+        #download 
+   
+            file = YouTube(youtube_link).streams.filter(res=youtube_type, file_extension='mp4').first().download()
+
+            @after_this_request
+            def remove_file(response):
+                os.remove(file)    
+                return response
+            return send_file(file,as_attachment=True)
     
     return render_template( 'home/index.html', form=form,msg=msg)
     
