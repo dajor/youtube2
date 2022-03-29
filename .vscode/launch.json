@@ -37,6 +37,13 @@
             ],
             "jinja": true,
             "justMyCode": true
+        },
+        {
+            "name": "Python: gunicorn",
+            "type": "python",
+            "request": "launch",
+            "program": "./venv/bin/gunicorn",
+            "args": [  "--config=gunicorn_config.py", "app:app"]
         }
     ]
 }
