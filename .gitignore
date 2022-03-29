@@ -1,2 +1,7 @@
 *.pyc
 __pycache__/*
+invoice2data-296711-b48cf1290c2d.json
+downloads/invoice2data-296711-b48cf1290c2d.json
+*.mp3
+venv/*
+.env

@@ -16,7 +16,9 @@ from pytube import YouTube
 # App modules
 from app        import app, lm, db, bc
 from app.models import Users
-from app.forms  import LoginForm, RegisterForm, Youtube
+from app.forms  import LoginForm, RegisterForm, Youtube, Voiceover
+
+from flask_babel import gettext
 
 # provide login manager with load_user callback
 @lm.user_loader
@@ -58,21 +60,21 @@ def register():
         user_by_email = Users.query.filter_by(email=email).first()
 
         if user or user_by_email:
-            msg = 'Error: User exists!'
+            msg = gettext(u'Error: User exists!')
         
         else:         
-
-            pw_hash = bc.generate_password_hash(password)
+            
+            pw_hash = bc.generate_password_hash(password).decode('utf-8')
 
             user = Users(username, email, pw_hash)
 
             user.save()
 
-            msg     = 'User created successfully.'     
+            msg     = gettext(u'User created successfully.')     
             success = True
 
     else:
-        msg = 'Input error'     
+        msg = gettext(u'Input error')     
 
     return render_template( 'accounts/register.html', form=form, msg=msg, success=success )
 
@@ -95,7 +97,9 @@ def login():
 
         # filter User out of database through username
         user = Users.query.filter_by(user=username).first()
-
+        if user is None:
+            # Check by Email
+            user = Users.query.filter_by(email=username).first()
         if user:
             
             if bc.check_password_hash(user.password, password):
@@ -108,6 +112,22 @@ def login():
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
 
+@app.route('/voiceover', methods=['GET', 'POST'])
+def voiceover():
+    form = Voiceover(request.form)
+    
+    if request.method == 'GET': 
+
+        return render_template( 'home/voiceover.html', form=form)
+
+    if form.validate_on_submit():
+
+        voiceover_text = request.form.get('voiceover_text', '', type=str)
+        from gtts import gTTS
+        tts = gTTS(voiceover_text)
+        tts.save('hello.mp3')
+
+    return render_template( 'home/voiceover.html', form=form)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

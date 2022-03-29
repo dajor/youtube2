@@ -1,0 +1,76 @@
+# German translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-03-29 12:00+0200\n"
+"PO-Revision-Date: 2022-03-28 17:54+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: app/views.py:63
+msgid "Error: User exists!"
+msgstr "Fehler: Benutzer existiert bereits!"
+
+#: app/views.py:73
+msgid "User created successfully."
+msgstr "Benutzer erfolgreich erstellt."
+
+#: app/views.py:77
+msgid "Input error"
+msgstr "Eingabefehler"
+
+#: app/templates/accounts/login.html:29
+msgid "Add your credentials"
+msgstr "Login-Daten eingeben"
+
+#: app/templates/accounts/login.html:39
+msgid "Username"
+msgstr "Benutzername"
+
+#: app/templates/accounts/login.html:49
+msgid "Password"
+msgstr "Passwort"
+
+#: app/templates/accounts/login.html:60
+msgid "Remember me"
+msgstr "Cookie speichern"
+
+#: app/templates/accounts/login.html:63
+msgid "Register"
+msgstr "Anmelden"
+
+#: app/templates/accounts/login.html:67
+msgid "Sign in"
+msgstr "Anmelden"
+
+#: app/templates/home/index.html:85
+msgid "Please use this service only for copywrite free videos"
+msgstr "Bitte nutzen Sie diesen Service nur für kopierfreie Videos"
+
+#: app/templates/home/index.html:121
+msgid "Add your Youtube link"
+msgstr "Youtube-Link hinzufügen"
+
+#: app/templates/home/index.html:156
+msgid "Quality"
+msgstr "Qualität"
+
+#: app/templates/home/index.html:176
+msgid "Send me Video"
+msgstr "Video senden"
+
+#: app/templates/home/index.html:180
+msgid "Check Video"
+msgstr "Video prüfen"
+

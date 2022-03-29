@@ -12,3 +12,9 @@ jinja2==3.0.3
 flask-restx==0.5.1
 flask_bcrypt==0.7.1
 pytube
+gTTS==2.2.4
+digital-ocean-spaces
+python-dotenv
+psycopg2==2.9.3
+flask-babel==2.0.0
+

@@ -22,4 +22,8 @@ class RegisterForm(FlaskForm):
 class Youtube(FlaskForm):
 	youtube_link    = StringField  (u'Youtube',validators=[DataRequired()])
 	youtube_type    = SelectField  ('Quality',default=None,choices = [],validate_choice=False)
+
+class Voiceover(FlaskForm):
+	voiceover_text    = TextAreaField  ('Text',validators=[DataRequired()],render_kw={"placeholder": "Enter your message... ", "rows": "4"})
+	
 	
