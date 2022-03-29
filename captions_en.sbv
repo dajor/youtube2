@@ -1,0 +1,201 @@
+0:00:02.300,0:00:08.700
+Creating and customizing a table in Doc²,
+before a table is automatically taught in Doc²,
+
+0:00:08.700,0:00:13.570
+can then be read out
+the function must first be activated.
+
+0:00:13.570,0:00:18.730
+To do this, under Settings modules, tables,
+extraction can be selected.
+
+0:00:18.730,0:00:22.029
+Following this, this function is now
+active.
+
+0:00:22.029,0:00:27.380
+Should use a table from the document
+must first be read out by Doc²
+
+0:00:27.380,0:00:31.460
+said document is uploaded and processed there
+will.
+
+0:00:31.460,0:00:37.640
+After opening the document and eventually
+Checking the header data must do the tables
+
+0:00:37.640,0:01:09.760
+Clicked on the icon at the bottom under Article
+will.
+
+0:01:09.760,0:01:11.600
+This brings us to the table view.
+
+0:01:11.600,0:01:16.560
+There is a small one on the left
+Overview of all pages of the document.
+
+0:01:16.560,0:01:19.990
+And on the basis of this can also be used between pages
+be navigated.
+
+0:01:19.990,0:01:23.360
+The current page is outlined in purple.
+
+0:01:23.360,0:01:28.750
+In the middle is a display of the current
+side of the document while right next to it
+
+0:01:28.750,0:01:31.100
+the extracted data is displayed.
+
+0:01:31.100,0:01:36.380
+To create a new table or an existing one
+Edit table needs training
+
+0:01:36.380,0:01:38.350
+mode to be activated.
+
+0:01:38.350,0:01:42.280
+Hereby we have various processing
+opportunities available.
+
+0:01:42.280,0:01:48.110
+On the one hand, we can go into the ad
+search out, and try automatically from
+
+0:01:48.110,0:01:49.810
+make the system recognize a table.
+
+0:01:49.810,0:01:55.070
+If the table is to be taught in manually,
+the edit button must be activated and then the
+
+0:01:55.070,0:01:58.780
+desired table can be marked.
+
+0:01:58.780,0:02:26.980
+With the button etc. markings are added,
+marking the different columns.
+
+0:02:26.980,0:02:31.120
+Subsequent to this, the save
+icon is clicked and the detected data will be displayed
+
+0:02:31.120,0:02:37.500
+shown in the table on the right.
+
+0:02:37.500,0:02:41.630
+There are several above the table
+functions.
+
+0:02:41.630,0:02:46.140
+These are changes from left to right
+cancel.
+
+0:02:46.140,0:02:47.500
+Advanced settings of.
+
+0:02:47.500,0:02:52.060
+Can be set the number of times
+we delete the data.
+
+0:02:52.060,0:02:57.400
+Block the extraction of the table for
+custom columns for these suppliers
+
+0:02:57.400,0:03:04.350
+enable add custom column
+Edit rows data mode activates this
+
+0:03:04.350,0:03:08.650
+mode is needed when specific part
+data within the fields can be read out
+
+0:03:08.650,0:03:13.280
+should and special rules if manual
+Regex rules should be added.
+
+0:03:13.280,0:03:18.040
+For the completion of the table need
+first the columns are assigned accordingly
+
+0:03:18.040,0:03:19.040
+will.
+
+0:03:19.040,0:03:24.010
+Columns should be superfluous or not too
+extracted, they can also be deleted
+
+0:03:24.010,0:03:25.450
+will.
+
+0:03:25.450,0:03:29.280
+Likewise, superfluous lines with a
+click on the X to be removed.
+
+0:03:29.280,0:03:34.780
+Under the three dots next to the column names
+can also be found next to the delete button
+
+0:03:34.780,0:03:41.230
+Group rows icon rows pin is in
+System indicated when a new line begins.
+
+0:03:41.230,0:03:44.910
+The house number position is recommended here
+or to use sum.
+
+0:03:44.910,0:03:49.300
+Is the content of the table wrong or could
+cannot be read out immediately, must go through
+
+0:03:49.300,0:03:53.780
+one click the appropriate field in the
+Table selected and then in the document
+
+0:03:53.780,0:03:58.069
+the corresponding content also with a
+Double-click or a highlight selected
+
+0:03:58.069,0:03:59.069
+will.
+
+0:03:59.069,0:04:03.620
+Now let's look at the rows as the work mode
+is closer, this can enabled for
+
+0:04:03.620,0:04:07.920
+extra audible column all that one blue
+Have additional data on the heading
+
+0:04:07.920,0:04:13.170
+future automatic extraction
+an additional column is required
+
+0:04:13.170,0:04:31.749
+can this be added here. For that
+Extracting the data needs the appropriate
+
+0:04:31.749,0:04:35.990
+Field clicked first and then
+the desired information on the document
+
+0:04:35.990,0:04:42.830
+to be chosen.
+
+0:04:42.830,0:04:50.250
+Are all required data in the table
+deposited, the table must be saved and
+
+0:04:50.250,0:04:52.900
+then be exported.
+
+0:04:52.900,0:04:57.229
+With the export, the newly created rules
+saved and will be saved when uploading the
+
+0:04:57.229,0:05:00.129
+same data type usually applied immediately.

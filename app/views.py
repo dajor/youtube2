@@ -152,26 +152,29 @@ def index():
 
         if len(youtube_type) ==0:
             image = YouTube(youtube_link).thumbnail_url
-            types = YouTube(youtube_link).streams.desc()
-            i = 0
-            type = 0
-            final_list = []
-            
-            streams = types.fmt_streams
-            for type in streams:
-                if type.mime_type == 'video/mp4':
-                    resolution = type.resolution
-                    test = 0
-                    for check in final_list:
-                        if resolution == check.resolution:
-                            test = 1
-                        
-                        
+            try:
+                types = YouTube(youtube_link).streams.desc()
+                i = 0
+                type = 0
+                final_list = []
+                
+                streams = types.fmt_streams
+                for type in streams:
+                    if type.mime_type == 'video/mp4':
+                        resolution = type.resolution
+                        test = 0
+                        for check in final_list:
+                            if resolution == check.resolution:
+                                test = 1
                             
-                    if test == 0:
-                        final_list.append(type)
+                            
+                                
+                        if test == 0:
+                            final_list.append(type)
 
-
+            except Exception as e:
+                msg = e.error_string
+                return render_template( 'home/index.html', form=form,msg=msg)
 
             return render_template( 'home/index.html', form=form,msg=msg,youtube_image=image,qualitys=final_list)
         else:

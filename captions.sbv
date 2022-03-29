@@ -1,0 +1,201 @@
+0:00:02.300,0:00:08.700
+Erstellen und Anpassen einer Tabelle in Doc²,
+bevor eine Tabelle in Doc² automatisch angelernt,
+
+0:00:08.700,0:00:13.570
+anschließend ausgelesen werden kann, muss
+die Funktion erst aktiviert werden.
+
+0:00:13.570,0:00:18.730
+Hierzu muss unter Einstellungen Module, Tabellen,
+Extraktion ausgewählt werden.
+
+0:00:18.730,0:00:22.029
+Im Anschluss daran ist diese Funktion nun
+aktiv.
+
+0:00:22.029,0:00:27.380
+Soll eine Tabelle aus dem Dokument mithilfe
+von Doc² ausgelesen werden, muss zunächst
+
+0:00:27.380,0:00:31.460
+besagtes Dokument dort hochgeladen und verarbeitet
+werden.
+
+0:00:31.460,0:00:37.640
+Nach dem Öffnen des Dokuments und eventuell
+Überprüfen der Kopf Daten muss das Tabellen
+
+0:00:37.640,0:01:09.760
+Symbol ganz unten unter Artikel angeklickt
+werden.
+
+0:01:09.760,0:01:11.600
+Damit kommen wir in die Tabellen Ansicht.
+
+0:01:11.600,0:01:16.560
+Auf der linken Seite findet sich eine kleine
+Übersicht über alle Seiten des Dokuments.
+
+0:01:16.560,0:01:19.990
+Und anhand dieser kann auch zwischen den Seiten
+navigiert werden.
+
+0:01:19.990,0:01:23.360
+Die aktuelle Seite ist lila umrandet.
+
+0:01:23.360,0:01:28.750
+Mittig befindet sich eine Anzeige der aktuellen
+Seite des Dokuments, während rechts daneben
+
+0:01:28.750,0:01:31.100
+die extrahierten Daten angezeigt werden.
+
+0:01:31.100,0:01:36.380
+Um eine neue Tabelle anzulegen bzw eine bestehende
+Tabelle zu bearbeiten, muss der Trainings
+
+0:01:36.380,0:01:38.350
+Modus aktiviert werden.
+
+0:01:38.350,0:01:42.280
+Hiermit stehen uns verschiedene Verarbeitungs
+Möglichkeiten zur Verfügung.
+
+0:01:42.280,0:01:48.110
+Wir können zum einen in die Anzeige rein
+raussuchen, und versuchen automatisch vom
+
+0:01:48.110,0:01:49.810
+System eine Tabelle erkennen zu lassen.
+
+0:01:49.810,0:01:55.070
+Soll die Tabelle manuell angelernt werden,
+muss der Edit Button aktiviert und dann die
+
+0:01:55.070,0:01:58.780
+gewünschte Tabelle markiert werden.
+
+0:01:58.780,0:02:26.980
+Mit dem Button etc. werden Markierungen hinzugefügt,
+die die verschiedenen Spalten markieren.
+
+0:02:26.980,0:02:31.120
+Im Anschluss daran wird auf das Speichern
+Symbol geklickt und die erkannten Daten werden
+
+0:02:31.120,0:02:37.500
+rechts in der Tabelle angezeigt.
+
+0:02:37.500,0:02:41.630
+Über der Tabelle finden sich verschiedene
+Funktionen.
+
+0:02:41.630,0:02:46.140
+Diese sind von links nach rechts Änderungen
+rückgängig machen.
+
+0:02:46.140,0:02:47.500
+Erweiterte Einstellungen der.
+
+0:02:47.500,0:02:52.060
+Kann die Anzahl der Zeit eingestellt, werden
+wir die Daten löschen.
+
+0:02:52.060,0:02:57.400
+Blockieren der Extraktion der Tabelle für
+diesen Lieferanten benutzerdefinierte Spalten
+
+0:02:57.400,0:03:04.350
+aktivieren benutzerdefinierte Spalte hinzufügen
+Zeilen Daten bearbeiten Modus aktiviert Dieser
+
+0:03:04.350,0:03:08.650
+Modus wird benötigt, wenn spezifische Teil
+Daten innerhalb der Felder ausgelesen werden
+
+0:03:08.650,0:03:13.280
+sollen und besondere Regeln, wenn händisch
+Regex Regeln hinzugefügt werden sollen.
+
+0:03:13.280,0:03:18.040
+Für die Vervollständigung der Tabelle müssen
+hier zunächst die Spalten entsprechend zugeordnet
+
+0:03:18.040,0:03:19.040
+werden.
+
+0:03:19.040,0:03:24.010
+Sollten Spalten überflüssig oder nicht zu
+extrahieren sein, können diese auch gelöscht
+
+0:03:24.010,0:03:25.450
+werden.
+
+0:03:25.450,0:03:29.280
+Ebenso können überflüssige Zeilen mit einem
+Klick auf das X entfernt werden.
+
+0:03:29.280,0:03:34.780
+Unter den drei Punkten neben den Spalten Namen
+findet sich neben dem Löschen Button auch
+
+0:03:34.780,0:03:41.230
+Zeilen gruppieren Symbol Zeilen Pin wird im
+System angezeigt, wann eine neue Zeile beginnt.
+
+0:03:41.230,0:03:44.910
+Es empfiehlt sich hier die Position Hausnummer
+oder Summe zu verwenden.
+
+0:03:44.910,0:03:49.300
+Ist der Inhalt der Tabelle falsch oder konnte
+nicht sofort ausgelesen werden, muss durch
+
+0:03:49.300,0:03:53.780
+einen Klick das entsprechende Feld in der
+Tabelle ausgewählt und anschließend im Dokument
+
+0:03:53.780,0:03:58.069
+der entsprechende Inhalt ebenfalls mit einem
+Doppelklick oder einer Markierung ausgewählt
+
+0:03:58.069,0:03:59.069
+werden.
+
+0:03:59.069,0:04:03.620
+Betrachten wir nun den Zeilen, da der Arbeitsmodus
+näher ist, dieser aktiviert können für
+
+0:04:03.620,0:04:07.920
+extra hörbare Spalte alle, die eine blaue
+Überschrift haben, zusätzliche Daten zur
+
+0:04:07.920,0:04:13.170
+zukünftigen automatischen Extraktion hinterlegt
+werden, ist eine zusätzliche Spalte nötig,
+
+0:04:13.170,0:04:31.749
+kann diese hier hinzugefügt werden.Für das
+Extrahieren der Daten muss das entsprechende
+
+0:04:31.749,0:04:35.990
+Feld zunächst angeklickt und anschließend
+die gewünschten Informationen auf dem Dokument
+
+0:04:35.990,0:04:42.830
+ausgewählt werden.
+
+0:04:42.830,0:04:50.250
+Sind alle benötigten Daten in der Tabelle
+hinterlegt, muss die Tabelle gespeichert und
+
+0:04:50.250,0:04:52.900
+im Anschluss exportiert werden.
+
+0:04:52.900,0:04:57.229
+Mit dem Export werden die neu erstellten Regeln
+gespeichert und werden beim Hochladen des
+
+0:04:57.229,0:05:00.129
+gleichen Datentyp in der Regel sofort angewendet.
