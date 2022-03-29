@@ -17,4 +17,4 @@ digital-ocean-spaces
 python-dotenv
 psycopg2==2.9.3
 flask-babel==2.0.0
-
+Werkzeug
