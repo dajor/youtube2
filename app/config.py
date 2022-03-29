@@ -23,15 +23,16 @@ class Config():
     SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_007')
 
     # This will create a file in <app> FOLDER
-    if "DATABASE_URL" in os.environ:
-        load_dotenv()
-    #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
-    if 'development' in os.environ:
-        if os.environ['FLASK_ENV'] == 'development':
-            SQLALCHEMY_DATABASE_URI = "postgresql://ideas:ideas@localhost/ideas"
-        else:
-            SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    else:
-            SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
+    # if "DATABASE_URL" in os.environ:
+    #     load_dotenv()
+    
+    # if 'development' in os.environ:
+    #     if os.environ['FLASK_ENV'] == 'development':
+    #         SQLALCHEMY_DATABASE_URI = "postgresql://ideas:ideas@localhost/ideas"
+    #     else:
+    #         SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    # else:
+    #         SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
         
     SQLALCHEMY_TRACK_MODIFICATIONS = False
