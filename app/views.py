@@ -129,6 +129,59 @@ def voiceover():
 
     return render_template( 'home/voiceover.html', form=form)
 
+@app.route('/audio.html', methods=['GET', 'POST'])
+def audio():
+    form = Youtube(request.form)
+    msg = None
+    youtube_type = None
+    qualitys = None
+
+    if request.method == 'GET': 
+
+        return render_template( 'home/audio.html', form=form)
+    
+    if form.validate_on_submit():
+        # assign form data to variables
+        youtube_link = request.form.get('youtube_link', '', type=str)
+        youtube_type = request.form.get('youtube_type', '', type=str)
+
+        print (youtube_link)
+        x = re.search(r"^((http|https)\:\/\/)?(www\.youtube\.com|youtu\.?be)\/((watch\?v=)?([a-zA-Z0-9]{11}))(&.*)*$", youtube_link)
+        print (x)
+        if x == None:
+            msg = "URL error - please use only a Youtube Link"
+
+        if len(youtube_type) ==0:
+            image = YouTube(youtube_link).thumbnail_url
+            try:
+                types = YouTube(youtube_link).streams.filter(only_audio=True).desc()
+                i = 0
+                type = 0
+                final_list = []
+                
+                streams = types.fmt_streams
+
+                for type in streams:
+                    final_list.append(type)
+
+            except Exception as e:
+                msg = e.error_string
+                return render_template( 'home/audio.html', form=form,msg=msg)
+
+            return render_template( 'home/audio.html', form=form,msg=msg,youtube_image=image,qualitys=final_list)
+        else:
+        #download 
+   
+            file = YouTube(youtube_link).streams.filter(abr=youtube_type, only_audio=True).first().download()
+
+            @after_this_request
+            def remove_file(response):
+                os.remove(file)    
+                return response
+            return send_file(file,as_attachment=True)
+    
+    return render_template( 'home/audio.html', form=form,msg=msg)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = Youtube(request.form)
@@ -153,7 +206,7 @@ def index():
         if len(youtube_type) ==0:
             image = YouTube(youtube_link).thumbnail_url
             try:
-                types = YouTube(youtube_link).streams.desc()
+                types = YouTube(youtube_link).streams.filter(file_extension='mp4').desc()
                 i = 0
                 type = 0
                 final_list = []
