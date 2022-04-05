@@ -5,16 +5,20 @@ Copyright (c) 2019 - present AppSeed.us
 
 # Python modules
 import os, logging 
+# App modules
+
+
+from app.extensions import lm, db, bc
 
 # Flask modules
-from flask               import render_template, request, url_for, redirect, send_from_directory,send_file, after_this_request
+from flask               import render_template, request, url_for, redirect, send_from_directory,send_file, after_this_request, Blueprint, current_app
+web1 = Blueprint('web1', __name__, url_prefix='/')
 from flask_login         import login_user, logout_user, current_user, login_required
 from werkzeug.exceptions import HTTPException, NotFound, abort
 from jinja2              import TemplateNotFound
 import re
 from pytube import YouTube
-# App modules
-from app        import app, lm, db, bc
+
 from app.models import Users
 from app.forms  import LoginForm, RegisterForm, Youtube, Voiceover
 
@@ -26,13 +30,13 @@ def load_user(user_id):
     return Users.query.get(int(user_id))
 
 # Logout user
-@app.route('/logout.html')
+@web1.route('/logout.html')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
 # Register a new user
-@app.route('/register.html', methods=['GET', 'POST'])
+@web1.route('/register.html', methods=['GET', 'POST'])
 def register():
     
     # declare the Registration Form
@@ -79,7 +83,7 @@ def register():
     return render_template( 'accounts/register.html', form=form, msg=msg, success=success )
 
 # Authenticate user
-@app.route('/login.html', methods=['GET', 'POST'])
+@web1.route('/login.html', methods=['GET', 'POST'])
 def login():
     
     # Declare the login form
@@ -112,7 +116,7 @@ def login():
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
 
-@app.route('/voiceover', methods=['GET', 'POST'])
+@web1.route('/voiceover', methods=['GET', 'POST'])
 def voiceover():
     form = Voiceover(request.form)
     
@@ -129,7 +133,7 @@ def voiceover():
 
     return render_template( 'home/voiceover.html', form=form)
 
-@app.route('/audio.html', methods=['GET', 'POST'])
+@web1.route('/audio.html', methods=['GET', 'POST'])
 def audio():
     form = Youtube(request.form)
     msg = None
@@ -182,7 +186,7 @@ def audio():
     
     return render_template( 'home/audio.html', form=form,msg=msg)
 
-@app.route('/', methods=['GET', 'POST'])
+@web1.route('/', methods=['GET', 'POST'])
 def index():
     form = Youtube(request.form)
     msg = None
@@ -270,6 +274,6 @@ def index():
 #         return render_template('home/page-500.html'), 500
 
 # Return sitemap
-@app.route('/sitemap.xml')
+@web1.route('/sitemap.xml')
 def sitemap():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
