@@ -19,7 +19,7 @@
       "request": "launch",
       "module": "flask",
       "env": {
-        "FLASK_APP": "run.py",
+        "FLASK_APP": "app.py",
         "FLASK_ENV": "development"
       },
       "args": ["run", "--no-debugger", "--port", "5005"],
@@ -44,7 +44,7 @@
       "type": "python",
       "request": "launch",
       "program": "./venv/bin/gunicorn",
-      "args": ["--config=gunicorn_config.py", "app:app"]
+      "args": ["--config=gunicorn_config.py", "app.wsgi:app"],
     }
   ]
 }
