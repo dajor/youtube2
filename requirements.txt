@@ -11,7 +11,7 @@ gunicorn==20.1.0
 jinja2==3.0.3
 flask-restx==0.5.1
 flask_bcrypt==0.7.1
-pytube
+pytube==12.1.0
 gTTS==2.2.4
 digital-ocean-spaces
 python-dotenv
